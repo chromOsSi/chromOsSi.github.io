@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <!--Main "Locked screen". not signed out-->
+        <div id="mainSignedOutBackgroundFilter">
+            <div class="errorMessage">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ff7676;"></i>
+                <h5 style="color: #ff7d7d;font-weight: 500;">We ran into a problem while authorizing your account, please sign in again.</h5>
+            </div>
+
+            <div id="detailBox">
+                <input id="username" placeholder="Username"/><p></p>
+                <input id="password" type="password" placeholder="Password">
+                <span>
+                    <i class="fa fa-eye" id="eyeIcon" aria-hidden="true" onclick="
+                        if(document.getElementById('password').type=='text'){
+                            document.getElementById('password').type='password';
+                            document.getElementById('eyeIcon').className='fa fa-eye'
+                            document.getElementById('password').style.fontSize='18px';
+                        }else if(document.getElementById('password').type=='password'){
+                            document.getElementById('password').type='text';
+                            document.getElementById('eyeIcon').className='fa-regular fa-eye-slash'
+                            document.getElementById('password').style.fontSize='15px';
+                        }
+                        " style="color:#ffffff;"></i>
+                </span>
+                <button id="submit"onclick="
+                validate('password', 'username')
+                ">
+                    <i class="fa-solid fa-check" style="color: #6b6b6b;"></i>
+                </button>
+            </div>
+            <div class="bottomMenu">
+                <button id="shutDown" onclick="shutDown()"><i class="fa-solid fa-power-off" style="color: #b0b0b0;"></i> Restart</button>
+                <button id="triggerAboutMenu">
+                    <i class="fa-solid fa-wifi" style="color: #dbdbdb;"></i>
+                    <i class="fa-solid fa-battery-three-quarters" style="color: #e3e3e3;"></i>
+                <span id="time"></span>
+                </button>
+            </div>
+        </div>
+        <div class="boot"></div>
+
+
+
+<!--Signed out screen-->
+
+<div id="signedOutScreen">
+
+    <div id="detailBox1">
+        <img src="images/google.png" class="googleLogoImg" height="50px" width="150px">
+        <h5 class="welcomeMesg">Welcome, sign in to your chromebook</h5>
+        <div class="passusr">
+        <input id="username1" placeholder="Username (suffix is automaticly added - typeThisOnly@example.com)"/><p></p>
+        <input id="password1" type="password" placeholder="Password" style="display: none;">
+    </div>
+    <button id="submit1" onclick='
+    loadGif();
+        setTimeout(() => {
+            document.getElementById("password1").style.display="block";
+            document.getElementById("username1").disabled=true;
+        document.querySelector(".signedOutLoader").style.display="none";
+    }, 1000);
+    '>Next</button>
+    </div>
+    <div class="bottomMenu">
+        <button id="shutDown" onclick="shutDown()" disabled><i class="fa-solid fa-power-off" style="color: #b0b0b0;"></i> Restart</button>
+        <button id="triggerAboutMenu">
+            <i class="fa-solid fa-wifi" style="color: #dbdbdb;"></i>
+            <i class="fa-solid fa-battery-three-quarters" style="color: #e3e3e3;"></i>
+        <span id="time1"></span>
+        </button>
+    </div>
+</div>
+
+
+      <!---  <div class="mouse">
+            <i class="fa-solid fa-arrow-pointer" style="color: #ffffff;"></i>
+        </div>-->
+        
+
+
+        <div class="signedOutLoader">
+            
+            <div id="gifLoader">
+                <h5 class="welcomeMesg1">Please wait</h5>
+                <img src="images/loader.gif" id="loaderGif">
+                
+            </div>
+        </div>
+
+
+        <div class="errorSO">
+
+                <h5 class="welcomeMesg1">Something went wrong.</h5>
+                <button id="submit2">Try Again</button>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
