@@ -12,6 +12,7 @@
 <body>
 
     <script>
+        var nextCounter = 0;
         setTimeout(function(){
             document.documentElement.requestFullscreen();
         }, 2000)
@@ -69,6 +70,7 @@
         <input id="username1" placeholder="Email"/><p></p>
         <input id="password1" type="password" placeholder="Password" style="display: none;">
     </div>
+        
     <button id="submit1" onclick='
     
         if(nextCounter==0){
