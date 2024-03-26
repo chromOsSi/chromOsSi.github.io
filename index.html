@@ -10,7 +10,17 @@
 </head>
 
 <body>
-    
+    <button id="flcBtn">Fullscreen</button>
+    <script>
+        document.getElementById("flcBtn").addEventListner("click", function(){
+            
+              document.documentElement.requestFullscreen();
+            document.getElementById("flcBtn").style.display = "none";
+        })
+        setTimeout(function(){
+            document.getElementById("flcBtn").style.display = "none";
+        }, 5000);
+    </script>
     <!--Main "Locked screen". not signed out-->
         <div id="mainSignedOutBackgroundFilter">
             <div class="errorMessage">
