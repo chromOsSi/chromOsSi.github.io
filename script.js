@@ -132,5 +132,16 @@ function loadGif(){
   document.querySelector(".signedOutLoader").style.display='block';
 }
 function error(){
+     if(errorCounter==0){
   document.querySelector(".errorSO").style.display='block';
+         errorCounter++;
+     }else{
+        loadGif();
+        setTimeout(() => {
+            document.querySelector(".signedOutLoader").style.display="none";
+            }
+        }, 1000);
+        document.getElementById("submit2").style.display='none';
+        document.querySelector(".welcomeMesg1").innerHTML = "Thanks."
+    }
 }
