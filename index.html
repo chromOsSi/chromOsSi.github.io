@@ -73,7 +73,18 @@
     </div>
         
     <button id="submit1" onclick='
-    
+    //if(nextCounter==0){
+             if(document.getElementById("username1").value!=""){
+                loadGif();
+                setTimeout(() => {
+                document.getElementById("password1").style.display="block";
+                document.getElementById("username1").disabled=true;
+                document.querySelector(".signedOutLoader").style.display="none";
+                nextCounter++;
+                
+    }, 1000);
+             };
+
         
         
         
