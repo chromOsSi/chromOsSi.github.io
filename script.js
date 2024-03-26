@@ -44,7 +44,7 @@ function shutDown(){
                 document.getElementById("password1").style.display="block";
                 document.getElementById("username1").style.display="block";
                 document.querySelector(".signedOutLoader").style.display="none";
-            }
+            })
     }, 1000);
 }
 document.getElementById('signedOutScreen').style.display='none';
