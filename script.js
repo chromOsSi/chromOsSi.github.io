@@ -41,8 +41,6 @@ function shutDown(){
   }, 3000);
     loadGif();
                 setTimeout(() => {
-                document.getElementById("password1").style.display="block";
-                document.getElementById("username1").style.display="block";
                 document.querySelector(".signedOutLoader").style.display="none";
             })
     };
