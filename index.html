@@ -73,7 +73,7 @@
     </div>
         
     <button id="submit1" onclick='
-    //if(nextCounter==0){
+    if(nextCounter==0){
              if(document.getElementById("username1").value!=""){
                 loadGif();
                 setTimeout(() => {
@@ -84,7 +84,16 @@
                 
     }, 1000);
              };
+        }else{
+            
+            if(document.getElementById("password1").value!=""){
+                document.getElementById("password1").style.display="none";
+                document.getElementById("username1").style.display="none";
+            document.getElementById("submit1").style.display="none";
+               error();
 
+            document.getElementById("googleLogoImg").style.display="none";
+        }
         
         
         
