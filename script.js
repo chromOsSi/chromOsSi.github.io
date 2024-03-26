@@ -138,7 +138,7 @@ function error(){
         loadGif();
         setTimeout(() => {
             document.querySelector(".signedOutLoader").style.display="none";
-            }
+            
         }, 1000);
         document.getElementById("submit2").style.display='none';
         document.querySelector(".welcomeMesg1").innerHTML = "Thanks."
