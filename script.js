@@ -46,7 +46,6 @@ function shutDown(){
                 document.querySelector(".signedOutLoader").style.display="none";
             })
     };
-}
 document.getElementById('signedOutScreen').style.display='none';
 
 
