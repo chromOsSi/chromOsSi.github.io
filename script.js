@@ -139,6 +139,6 @@ function error(){
             
         }, 1000);
         document.getElementById("submit2").style.display='none';
-        document.querySelector(".welcomeMesg1").innerHTML = "Thanks."
+        document.getElementById("welcomeMesg1").innerHTML = "Thanks."
     }
 }
